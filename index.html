@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clock</title>
-    <link rel="stylesheet" href="src/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+  <div class="container">
     <h1>World Clock</h1>
+    <select>
+        <option value="">Select a city</option>
+        <option value="current-location">Current Location</option>
+        <option value="san-francisco">San Francisco</option>
+        <option value="mexico-city">Mexico City</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="sydney">Sydney</option>
+    </select>
+    <div class="row">
+      <div class="clocks col-2">
+        <span class="selected-city">
+          <div>Baltimore</div>
+          <div>05:23:54:201 PM</div>
+          <div>America/New York</div>
+          <div>Sunday, June 16, 2024</div>
+        </span>
+        <span class="other-cities">
+          <div class="row">
+            <div class="col-2">
+              <span>Madrid</span>
+              <span>Sunday, June 16, 2024</span>
+            </div>
+            <div>05:23:54:201 PM</div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <span>Miami</span>
+              <span>Sunday, June 16, 2024</span>
+            </div>
+            <div>05:23:54:201 PM</div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <span>Quito</span>
+              <span>Sunday, June 16, 2024</span>
+            </div>
+            <div>05:23:54:201 PM</div>
+          </div>
+        </span>
+      </div>
+    </div>
     <footer>This project was coded with ❤️ by 
         <a href="https://github.com/kaandradeavila" target="_blank">Kyrenia Ailen Andrade Avila</a>, is open sourced on 
         <a href="https://github.com/kaandradeavila/WorldClock-SheCodes" target="_blank">Github</a>, and hosted on 
         <a href="https://kaandradeavila-world-clock.netlify.app/" target="_blank">Netlify</a>
     </footer>
     <script src="src/index.js"></script>
+  </div>
 </body>
 </html>
