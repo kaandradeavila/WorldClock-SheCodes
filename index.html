@@ -5,49 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Clock</title>
   <link rel="stylesheet" href="src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>World Clock</h1>
-    <select>
-        <option value="">Select a city</option>
-        <option value="current-location">Current Location</option>
-        <option value="san-francisco">San Francisco</option>
-        <option value="mexico-city">Mexico City</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="sydney">Sydney</option>
-    </select>
-    <div class="row">
-      <div class="clocks col-2">
-        <span class="selected-city">
-          <div>Baltimore</div>
-          <div>05:23:54:201 PM</div>
-          <div>America/New York</div>
-          <div>Sunday, June 16, 2024</div>
-        </span>
-        <span class="other-cities">
-          <div class="row">
-            <div class="col-2">
-              <span>Madrid</span>
-              <span>Sunday, June 16, 2024</span>
-            </div>
+    <div class="app">
+      <h1>World Clock</h1>
+      <select class="city-select">
+          <option value="">Select a city</option>
+          <option value="current-location">Current Location</option>
+          <option value="san-francisco">San Francisco</option>
+          <option value="mexico-city">Mexico City</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="sydney">Sydney</option>
+      </select>
+      <div class="row">
+        <div class="clocks col-2">
+          <span class="selected-city">
+            <div>Baltimore</div>
             <div>05:23:54:201 PM</div>
-          </div>
-          <div class="row">
-            <div class="col-2">
-              <span>Miami</span>
-              <span>Sunday, June 16, 2024</span>
+            <div>Sunday, June 16, 2024</div>
+            <div>America/New York</div>
+          </span>
+          <span class="other-cities">
+            <div class="fixed-cities row">
+              <div class="col-2">
+                <span>Madrid</span>
+                <span>Sunday, June 16, 2024</span>
+              </div>
+              <div>05:23:54:201 PM</div>
             </div>
-            <div>05:23:54:201 PM</div>
-          </div>
-          <div class="row">
-            <div class="col-2">
-              <span>Quito</span>
-              <span>Sunday, June 16, 2024</span>
+            <div class="fixed-cities row">
+              <div class="col-2">
+                <span>Miami</span>
+                <span>Sunday, June 16, 2024</span>
+              </div>
+              <div>05:23:54:201 PM</div>
             </div>
-            <div>05:23:54:201 PM</div>
-          </div>
-        </span>
+            <div class="fixed-cities row">
+              <div class="col-2">
+                <span>Quito</span>
+                <span>Sunday, June 16, 2024</span>
+              </div>
+              <div>05:23:54:201 PM</div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
     <footer>This project was coded with ❤️ by 
