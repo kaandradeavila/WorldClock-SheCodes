@@ -8,19 +8,19 @@
   }
 
 .container{
-    background-color: #45171D;
+    background-color:#1a2849;
     border: none;
     border-radius: 10px;
     padding: 20px;
     font-family: inter;
     max-width: 1000px;
-    min-width: 700px;
+    min-width: 900px;
     display: block;
     margin: 0 auto;
 }
 
 .app{
-    background-color: #E84A5F;
+    background-color:#505bda;
     border: none;
     border-radius: 10px;
     margin: 20px;
@@ -29,7 +29,7 @@
 .title-app{
     text-align: center;
     color: #FFFBFB;
-    font-size: 48px;
+    font-size: 50px;
     padding: 40px;
     font-weight: 700;
 }
@@ -39,8 +39,8 @@
     margin: 20px auto;
     border: none;
     border-radius: 10px;
-    background-color: #FF847C;
-    color: #FFFBFB;
+    background-color: #ffa87b;
+    color: #1a2849;
     padding: 5px 100px 5px 5px;
     font-size: 18px;
 }
@@ -60,19 +60,19 @@
     text-align: center;
     border: none;
     border-radius: 10px;
-    background-color: #FF847C;
-    color: #FFFBFB;
+    background-color:#ffaac3;
+    color: #1a2849;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 30px 50px;
     height: 275px;
-
+    width: 325px;
 }
 
 .main-city-name{
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     margin: 15px auto;
 }
@@ -80,12 +80,12 @@
 .main-clock{
     font-size: 36px;
     margin: 15px auto;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .main-clock-date{
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 20px 0;
 }
 
@@ -93,13 +93,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #45171D;
+    color: #FFFBFB;
 }
 
 .fixed-cities{
     border: none;
     border-radius: 10px;
-    background-color: #FECEA8;
+    background-color: #b063c5;
     text-align: center;
     padding: 20px;
     width: 300px;
@@ -134,11 +134,11 @@ footer{
 }
 
 .footer-a{
-    color: #FECEA8;
+    color: #ffa87b;
     text-decoration: none;
     transition: all 200ms ease-in-out;
 }
 
 .footer-a:hover{
-    color: #E84A5F;
+    color: #b063c5;
 }
