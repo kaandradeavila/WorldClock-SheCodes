@@ -11,48 +11,89 @@
     background-color: #45171D;
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     font-family: inter;
+    max-width: 1000px;
+    min-width: 700px;
+    display: block;
+    margin: 0 auto;
 }
 
 .app{
     background-color: #E84A5F;
     border: none;
     border-radius: 10px;
-    margin: 10px 20px;
+    margin: 20px;
 }
 
-h1{
+.title-app{
     text-align: center;
-    color: #F6F3F3;
+    color: #FFFBFB;
+    font-size: 48px;
+    padding: 40px;
+    font-weight: 700;
 }
 
 .city-select{
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     border: none;
     border-radius: 10px;
     background-color: #FF847C;
-    color: #F6F3F3;
-    padding: 3px 10px;
-    font-size: 14px;
+    color: #FFFBFB;
+    padding: 5px 100px 5px 5px;
+    font-size: 18px;
+}
+
+.row-clocks{
+    padding-bottom: 10px;
 }
 
 .clocks{
     display: flex;
     justify-content: space-evenly;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 .selected-city{
     text-align: center;
-    padding: 10px;
     border: none;
     border-radius: 10px;
     background-color: #FF847C;
+    color: #FFFBFB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 50px;
+    height: 275px;
+
+}
+
+.main-city-name{
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 15px auto;
+}
+
+.main-clock{
+    font-size: 36px;
+    margin: 15px auto;
+    font-weight: 300;
+}
+
+.main-clock-date{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 0;
 }
 
 .other-cities{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #45171D;
 }
 
 .fixed-cities{
@@ -60,9 +101,44 @@ h1{
     border-radius: 10px;
     background-color: #FECEA8;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fixed-cities-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.other-cities-name{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.other-cities-date{
+    font-size: 16px;
+}
+
+.other-cities-clock{
+    font-size: 24px;
+    padding-top: 10px;
 }
 
 footer{
     text-align: center;
+    padding: 20px;
+    color: #FFFBFB;
+}
+
+.footer-a{
+    color: #FECEA8;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+}
+
+.footer-a:hover{
+    color: #E84A5F;
 }

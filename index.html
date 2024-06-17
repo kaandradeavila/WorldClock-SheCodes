@@ -12,53 +12,54 @@
 <body>
   <div class="container">
     <div class="app">
-      <h1>World Clock</h1>
-      <select class="city-select">
+      <div class="title-app">WORLD CLOCK</div>
+      <div class="city-select-wrap">
+        <select class="city-select">
           <option value="">Select a city</option>
           <option value="current-location">Current Location</option>
           <option value="san-francisco">San Francisco</option>
           <option value="mexico-city">Mexico City</option>
           <option value="tokyo">Tokyo</option>
           <option value="sydney">Sydney</option>
-      </select>
-      <div class="row">
+        </select>
+      </div>
+      <div class="row-clocks">
         <div class="clocks col-2">
           <span class="selected-city">
-            <div>Baltimore</div>
-            <div>05:23:54:201 PM</div>
-            <div>Sunday, June 16, 2024</div>
-            <div>America/New York</div>
+            <div class="main-city-name">Baltimore</div>
+            <div class="main-clock">05:23:54:201 <small>PM</small></div>
+            <div class="main-clock-date">Sunday, June 16, 2024</div>
           </span>
           <span class="other-cities">
             <div class="fixed-cities row">
-              <div class="col-2">
-                <span>Madrid</span>
-                <span>Sunday, June 16, 2024</span>
+              <div class="fixed-cities-details">
+                <span class="other-cities-name">Madrid</span>
+                <span class="other-cities-date">Sunday, June 16, 2024</span>
               </div>
-              <div>05:23:54:201 PM</div>
+              <div class="other-cities-clock">05:23:54:201 PM</div>
             </div>
             <div class="fixed-cities row">
-              <div class="col-2">
-                <span>Miami</span>
-                <span>Sunday, June 16, 2024</span>
+              <div class="fixed-cities-details">
+                <span class="other-cities-name">Miami</span>
+                <span class="other-cities-date">Sunday, June 16, 2024</span>
               </div>
-              <div>05:23:54:201 PM</div>
+              <div class="other-cities-clock">05:23:54:201 PM</div>
             </div>
             <div class="fixed-cities row">
-              <div class="col-2">
-                <span>Quito</span>
-                <span>Sunday, June 16, 2024</span>
+              <div class="fixed-cities-details">
+                <span class="other-cities-name">Quito</span>
+                <span class="other-cities-date">Sunday, June 16, 2024</span>
               </div>
-              <div>05:23:54:201 PM</div>
+              <div class="other-cities-clock">05:23:54:201 PM</div>
             </div>
           </span>
         </div>
       </div>
     </div>
     <footer>This project was coded with ❤️ by 
-        <a href="https://github.com/kaandradeavila" target="_blank">Kyrenia Ailen Andrade Avila</a>, is open sourced on 
-        <a href="https://github.com/kaandradeavila/WorldClock-SheCodes" target="_blank">Github</a>, and hosted on 
-        <a href="https://kaandradeavila-world-clock.netlify.app/" target="_blank">Netlify</a>
+        <a class="footer-a" href="https://github.com/kaandradeavila" target="_blank">Kyrenia Ailen Andrade Avila</a>, is open sourced on 
+        <a class="footer-a" href="https://github.com/kaandradeavila/WorldClock-SheCodes" target="_blank">Github</a>, and hosted on 
+        <a class="footer-a" href="https://kaandradeavila-world-clock.netlify.app/" target="_blank">Netlify</a>.
     </footer>
     <script src="src/index.js"></script>
   </div>
