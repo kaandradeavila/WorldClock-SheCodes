@@ -8,16 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="app">
       <div class="title-app">WORLD CLOCK</div>
       <div class="city-select-wrap">
-        <select class="city-select">
-          <option value="">Select a city</option>
+        <select class="city-select" id="city-select">
+          <option value="" selected>Select a city</option>
           <option value="current-location">Current Location</option>
-          <option value="san-francisco">San Francisco</option>
+          <option value="los-angeles">Los Angeles</option>
           <option value="mexico-city">Mexico City</option>
           <option value="tokyo">Tokyo</option>
           <option value="sydney">Sydney</option>
@@ -26,33 +28,11 @@
       <div class="row-clocks">
         <div class="clocks col-2">
           <span class="selected-city">
-            <div class="main-city-name">Baltimore</div>
-            <div class="main-clock">05:23:54:201 <small>PM</small></div>
-            <div class="main-clock-date">Sunday, June 16, 2024</div>
+            <div class="main-city-name" id="main-city-name">Choose a city</div>
+            <div class="main-clock" id="main-clock"></div>
+            <div class="main-clock-date" id="main-clock-date"></div>
           </span>
-          <span class="other-cities">
-            <div class="fixed-cities row">
-              <div class="fixed-cities-details">
-                <span class="other-cities-name">Madrid</span>
-                <span class="other-cities-date">Sunday, June 16, 2024</span>
-              </div>
-              <div class="other-cities-clock">05:23:54:201 PM</div>
-            </div>
-            <div class="fixed-cities row">
-              <div class="fixed-cities-details">
-                <span class="other-cities-name">Miami</span>
-                <span class="other-cities-date">Sunday, June 16, 2024</span>
-              </div>
-              <div class="other-cities-clock">05:23:54:201 PM</div>
-            </div>
-            <div class="fixed-cities row">
-              <div class="fixed-cities-details">
-                <span class="other-cities-name">Quito</span>
-                <span class="other-cities-date">Sunday, June 16, 2024</span>
-              </div>
-              <div class="other-cities-clock">05:23:54:201 PM</div>
-            </div>
-          </span>
+          <span class="other-cities" id="other-cities"></span>
         </div>
       </div>
     </div>
