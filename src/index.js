@@ -20,102 +20,83 @@ function displayFixedCities(){
         <div class="fixed-cities row">
         <div class="fixed-cities-details">
         <span class="other-cities-name">${city}</span>
-        <span class="other-cities-date">${moment().tz(fixedCitiesTimezone).format("dddd, MMMM D, YYYY")}</span>
+        <span class="other-cities-date">${moment().tz(fixedCitiesTimezone).format("dddd MMMM Do, YYYY")}</span>
         </div>
-        <div class="other-cities-clock">${moment().tz(fixedCitiesTimezone).format("hh:mm:ss [<small>]A[</small>]")}</div>
+        <div class="other-cities-clock">${moment().tz(fixedCitiesTimezone).format("hh:mm:ss:S [<small>]A[</small>]")}</div>
         </div>
         `
     });
     otherCitiesElement.innerHTML = otherCitiesHtml;
 }
 
-function displayTime(selectTimezone){
-    let mainClockElement = document.querySelector("#main-clock");
-    mainClockElement.innerHTML = moment().tz(selectTimezone).format("hh:mm:ss [<small>]A[</small>]");
-}
-
-function displayDate(selectTimezone){
-    let mainClockDateElement = document.querySelector("#main-clock-date");
-    mainClockDateElement.innerHTML = moment().tz(selectTimezone).format("dddd, MMMM D, YYYY");
-}
-
-function selectCity(event){
-    let city = "unknown";
-    
-    if (event.target.value.length > 0){
-        if (event.target.value === "current-location"){
-            city = "Current Location";
-        }
-        if (event.target.value === "los-angeles"){
-            city = "Los Angeles";
-        }
-        if (event.target.value === "mexico-city"){
-            city = "Mexico City";
-        }
-        if (event.target.value === "tokyo"){
-            city = "Tokyo";
-        }
-        if (event.target.value === "sydney"){
-            city= "Sydney";
-        }
-    }
-
+function displayMainClockCity(city){
     let mainCityName = document.querySelector("#main-city-name");
     mainCityName.innerHTML = city;
 }
 
-function setTimeDate(event){
-    let timezone = "America/New_York";
+function handleDate(timezone){
+    let mainClockDateElement = document.querySelector("#main-clock-date");
+    mainClockDateElement.innerHTML = moment().tz(timezone).format("dddd MMMM Do, YYYY");
+}
 
+function handleTime(timezone){
+    let mainClockElement = document.querySelector("#main-clock");
+    mainClockElement.innerHTML = moment().tz(timezone).format("h:mm:ss:S [<small>]A[</small>]");
+}
+
+function handleChangeCity(event){
+    stopDefaultDisplay();
+    let city = "Choose a City";
+    
     if (event.target.value.length > 0){
         if (event.target.value === "current-location"){
             timezone = moment.tz.guess();
+            city = timezone.replace("_", " ").split("/")[1];
         }
         if (event.target.value === "los-angeles"){
+            city = "Los Angeles";
             timezone = "America/Los_Angeles";
         }
         if (event.target.value === "mexico-city"){
+            city = "Mexico City";
             timezone = "America/Mexico_City";
         }
         if (event.target.value === "tokyo"){
+            city = "Tokyo";
             timezone = "Asia/Tokyo";
         }
         if (event.target.value === "sydney"){
+            city= "Sydney";
             timezone = "Australia/Sydney";
         }
     }
+    else{
+        city = "Baltimore";
+        timezone = "America/New_York";
+    }
 
-    displayTime(timezone);
-    displayDate(timezone);
-}
-
-function readSelectedTimezone(){
-    let citySelectElement = document.querySelector("#city-select");
-    citySelectElement.addEventListener("change", setTimeDate);
-}
-
-function readSelectedCity(){
-    let citySelectElement = document.querySelector("#city-select");
-    citySelectElement.addEventListener("change", selectCity);
+    displayMainClockCity(city);
+    handleTime(timezone);
+    handleDate(timezone);
+    setInterval(()=>{handleTime(timezone); handleDate(timezone)}, 100)
 }
 
 function displayDefaultCity(){
     let mainCityNameElement = document.querySelector("#main-city-name");
     mainCityNameElement.innerHTML = "Baltimore";
-    displayTime ("America/New_York");
-    displayDate ("America/New_York");
+    handleTime("America/New_York");
+    handleDate("America/New_York");
 }
 
-readSelectedCity();
-setInterval(readSelectedCity, 1000);
+function stopDefaultDisplay(){
+    clearInterval(displayDefault);
+}
 
-readSelectedTimezone();
-setInterval(readSelectedTimezone, 1000);
+displayDefaultCity();
+var displayDefault = setInterval(displayDefaultCity, 100);
 
 displayFixedCities();
-setInterval(displayFixedCities, 1000);
+setInterval(displayFixedCities, 100);
 
-/* --- displays Baltimore time, for whenever the error in the selected cities is fixed ---
-displayDefaultCity()
-setInterval(displayDefaultCity, 1000);
-*/
+let citySelectElement = document.querySelector("#city-select");
+citySelectElement.addEventListener("change", handleChangeCity);
